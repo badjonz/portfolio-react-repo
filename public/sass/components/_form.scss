@@ -1,0 +1,61 @@
+.form {
+  position: relative;
+  z-index: 5;
+  &__group:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+  &__input {
+    @include inputtext;
+    transition: all 0.3s;
+
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark-2;
+    }
+
+    &:focus {
+      @include inputtextfocus;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid $color-invalid;
+    }
+  }
+
+  &__label {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    transition: all 0.3s;
+  }
+
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+
+  &__textarea {
+    @include inputtext;
+    resize: none;
+
+    &:focus {
+      @include inputtextfocus;
+    }
+    &:focus:invalid {
+      border-bottom: 3px solid $color-invalid;
+    }
+  }
+
+  &__textarea:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-15rem);
+  }
+}
+
+.g-recaptcha > div {
+  width: 100%;
+}

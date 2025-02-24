@@ -1,0 +1,45 @@
+body::before {
+  content: "";
+  backface-visibility: hidden;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 6000;
+  background-color: #fff;
+  height: $grid-border;
+  width: 100%;
+}
+body::after {
+  content: "";
+  backface-visibility: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 5500;
+  background-color: inherit;
+  height: $grid-border;
+  width: 100%;
+}
+
+html::before {
+  content: "";
+  backface-visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: $grid-border;
+  background-color: inherit;
+  z-index: 6500;
+}
+html::after {
+  content: "";
+  backface-visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: $grid-border;
+  background-color: inherit;
+  z-index: 5000;
+}

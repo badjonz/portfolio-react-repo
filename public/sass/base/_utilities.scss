@@ -1,0 +1,88 @@
+.row {
+  display: flex;
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
+  .col-1-of-2 {
+    flex-basis: 50%;
+  }
+}
+
+// MARGINS
+
+.u-margin-bottom-small {
+  margin-bottom: 4rem !important;
+}
+.u-margin-bottom-medium {
+  margin-bottom: 6rem !important;
+}
+.u-margin-bottom-big {
+  margin-bottom: 8rem !important;
+}
+.u-margin-bottom-huge {
+  margin-bottom: 10rem !important;
+}
+
+.u-margin-top-small {
+  margin-top: 4rem !important;
+}
+.u-margin-top-medium {
+  margin-top: 6rem !important;
+}
+.u-margin-top-big {
+  margin-top: 8rem !important;
+}
+.u-margin-top-huge {
+  margin-top: 10rem !important;
+}
+
+.article-heading {
+  position: relative;
+  padding: 1.6rem 0;
+  backface-visibility: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 2px;
+    width: 8rem;
+    background-color: $color-tertiary;
+    visibility: hidden;
+  }
+
+  .heading-secondary {
+    opacity: 0;
+  }
+}
+
+.article-heading.isOpen {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 40%;
+    height: 2px;
+    width: 20rem;
+    background-color: $color-tertiary;
+    animation-name: lineSlideIn;
+    animation-duration: 0.35s;
+    animation-timing-function: 0.35s cubic-bezier(0.45, 0.85, 0.35, 0.85);
+    animation-fill-mode: both;
+    visibility: visible;
+  }
+
+  .heading-secondary {
+    animation-name: moveInBottom;
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    backface-visibility: hidden;
+    animation-delay: 0.25s;
+    animation-fill-mode: backwards;
+    opacity: 1;
+  }
+}
+
+.lazy-img {
+  filter: blur(20px);
+}

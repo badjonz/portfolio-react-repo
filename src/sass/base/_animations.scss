@@ -1,0 +1,154 @@
+@-webkit-keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@-moz-keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@-o-keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveInBottomPic {
+  0% {
+    opacity: 0;
+    top: 60%;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes moveInBottomBlob {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+@-webkit-keyframes lineSlideIn {
+  0% {
+    left: 40%;
+    width: 40rem;
+  }
+  75% {
+    width: 15rem;
+  }
+  100% {
+    left: 0;
+    width: 8rem;
+  }
+}
+
+@-moz-keyframes lineSlideIn {
+  0% {
+    left: 40%;
+    width: 40rem;
+  }
+  75% {
+    width: 15rem;
+  }
+  100% {
+    left: 0;
+    width: 8rem;
+  }
+}
+
+@-o-keyframes lineSlideIn {
+  0% {
+    left: 40%;
+    width: 40rem;
+  }
+  75% {
+    width: 15rem;
+  }
+  100% {
+    left: 0;
+    width: 8rem;
+  }
+}
+@keyframes lineSlideIn {
+  0% {
+    left: 40%;
+    width: 40rem;
+  }
+  75% {
+    width: 15rem;
+  }
+  100% {
+    left: 0;
+    width: 8rem;
+  }
+}
+
+@keyframes social {
+  0% {
+    transform: translateX(4rem);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes comp1 {
+  0% {
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes comp2 {
+  0% {
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes comp3 {
+  0% {
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

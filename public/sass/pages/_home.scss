@@ -1,0 +1,501 @@
+// BANNER /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.banner {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 4000;
+  background-image: linear-gradient(
+    $color-background-dark 0%,
+    $color-background 100%
+  );
+  overflow: hidden;
+}
+
+//Preload ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.preload {
+  height: 94.65%;
+  width: 97.35%;
+  background-color: $color-primary-dark;
+  position: fixed;
+  overflow: hidden;
+  backface-visibility: hidden;
+  z-index: 99999;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 38rem;
+  width: fit-content;
+  @include respond(tab-land) {
+    height: 45rem;
+  }
+  @include respond(tab-port) {
+    height: 50rem;
+  }
+  @include respond(phone) {
+    height: 35rem;
+  }
+}
+
+.header-hero {
+  position: relative;
+  padding: calc(2 * #{$header-height}) 0;
+  max-width: 114rem;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  z-index: 10;
+
+  @include respond(tab-land) {
+    max-width: 80rem;
+    grid-template-columns: 55% 45%;
+  }
+  @include respond(tab-port) {
+    grid-template-columns: 60% 40%;
+  }
+  @include respond(phone) {
+    max-width: 75rem;
+    grid-template-columns: none;
+    grid-template-rows: 1fr 1fr;
+    padding: calc(1.2 * #{$header-height}) 0;
+    height: 100rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .heading {
+    &-box {
+      align-self: flex-start;
+      @include respond(phone) {
+        order: 2;
+        text-align: center;
+      }
+      .heading-primary {
+        &__main {
+          display: block;
+          animation-name: moveInBottom;
+          animation-duration: 0.8s;
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          backface-visibility: hidden;
+          width: 78%;
+          &--bold {
+            font-weight: 700;
+          }
+
+          @include respond(tab-land) {
+            width: 88%;
+          }
+          @include respond(tab-port) {
+            width: 80%;
+          }
+          @include respond(phone) {
+            animation-delay: 1.6s;
+            animation-fill-mode: backwards;
+            width: 70%;
+            margin: 0 auto;
+            margin-bottom: 1rem;
+          }
+        }
+        &__sub {
+          margin-top: 4rem;
+          font-weight: 300;
+          display: block;
+          font-size: 3rem;
+          line-height: 4rem;
+          animation-name: moveInBottom;
+          animation-duration: 0.8s;
+          animation-delay: 0.7s;
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          animation-fill-mode: backwards;
+          backface-visibility: hidden;
+          width: 90%;
+          @include respond(tab-land) {
+            width: 95%;
+          }
+          @include respond(tab-port) {
+            width: 90%;
+          }
+          @include respond(phone) {
+            animation-delay: 2.3s;
+            width: 80%;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+
+    &-photo {
+      position: relative;
+      @include respond(phone) {
+        order: 1;
+      }
+      &__pic {
+        position: absolute;
+        left: 60%;
+        top: 60%;
+        transform: translate(-50%, -50%);
+        height: 43rem;
+        width: auto;
+        z-index: 1000;
+        transition: all 0.8s ease-out;
+        animation-name: moveInBottomPic;
+        animation-duration: 0.8s;
+        animation-delay: 2.3s;
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        animation-fill-mode: backwards;
+        backface-visibility: hidden;
+
+        @include respond(phone) {
+          animation-delay: 0.7s;
+        }
+      }
+
+      &__png {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        opacity: 0.7;
+        height: 45rem;
+        width: auto;
+        transform: translate(-50%, -48%);
+        z-index: 500;
+        transition: all 0.8s ease-out;
+        animation-name: moveInBottomBlob;
+        animation-duration: 0.8s;
+        animation-delay: 1.6s;
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        animation-fill-mode: backwards;
+        backface-visibility: hidden;
+        @include respond(phone) {
+          animation-delay: 0s;
+        }
+      }
+      &:hover .heading-photo__png {
+        transform: translate(-50%, -50%);
+      }
+      &:hover .heading-photo__pic {
+        height: 44.5rem;
+      }
+    }
+  }
+}
+
+.about {
+  padding-top: 13rem;
+  padding-bottom: 17rem;
+  max-width: $grid-width;
+  margin: 0 auto;
+  height: auto;
+  @include respond(tab-land) {
+    max-width: 85rem;
+    padding-top: 5rem;
+    padding-bottom: 10rem;
+  }
+  @include respond(tab-port) {
+    max-width: 70rem;
+  }
+  @include respond(phone) {
+    max-width: 80%;
+  }
+
+  p {
+    font-size: $default-font-size;
+  }
+
+  .article-content {
+    width: 90%;
+    opacity: 0;
+    transition: all 0.5s;
+    transition-delay: 0.5s;
+    transform: translateY(0.5rem);
+    @include respond(phone) {
+      width: 100%;
+    }
+  }
+
+  .article-content.isOpen {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .composition {
+    opacity: 0;
+    // -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    // transform: scale3d(1.05);
+  }
+
+  .composition.isOpen {
+    // transition: all 1.125s cubic-bezier(0.215, 0.61, 0.355, 1) 0.25s backwards;
+    // animation-name: bounce;
+    // animation-timing-function: cubic-bezier(0.57, 0.21, 0.69, 3.25);
+    // animation-duration: 1s;
+    // animation-delay: 0.7s;
+    // animation-fill-mode: both;
+    opacity: 1;
+    // visibility: visible;
+    transition: all 0.5s 0.8s;
+
+    // .composition__photo {
+    //   &--p1 {
+    //     animation-name: comp1;
+    //     animation-timing-function: ease-in;
+    //     animation-duration: 0.8s;
+    //     animation-delay: 0.7s;
+    //     animation-fill-mode: both;
+    //   }
+    //   &--p2 {
+    //     animation-name: comp2;
+    //     animation-timing-function: ease-in;
+    //     animation-duration: 0.8s;
+    //     animation-delay: 0.7s;
+    //     animation-fill-mode: both;
+    //   }
+    //   &--p3 {
+    //     animation-name: comp3;
+    //     animation-timing-function: ease-in;
+    //     animation-duration: 0.8s;
+    //     animation-delay: 0.7s;
+    //     animation-fill-mode: both;
+    //   }
+    // }
+
+    .composition__photo--p1 {
+      animation-name: comp1;
+      animation-timing-function: ease-out;
+      animation-duration: 0.8s;
+      animation-delay: 0.7s;
+      animation-fill-mode: both;
+    }
+    .composition__photo--p2 {
+      animation-name: comp2;
+      animation-timing-function: ease-out;
+      animation-duration: 0.8s;
+      animation-delay: 0.7s;
+      animation-fill-mode: both;
+    }
+    .composition__photo--p3 {
+      animation-name: comp3;
+      animation-timing-function: ease-out;
+      animation-duration: 0.8s;
+      animation-delay: 0.7s;
+      animation-fill-mode: both;
+    }
+
+    // transition-timing-function: cubic-bezier(0.64, 0.57, 0.67, 1.53);
+    // transition-duration: 2.9s;
+  }
+}
+
+// SKILLs ///////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+.skill {
+  &__box {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    position: relative;
+    flex: 0 0 33.3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    height: 20rem;
+    align-content: space-between;
+  }
+
+  &__icon {
+    height: 13rem;
+    width: 13rem;
+
+    @include respond(tab-land) {
+      height: 12rem;
+      width: 12rem;
+    }
+    @include respond(tab-port) {
+      height: 11rem;
+      width: 11rem;
+    }
+    @include respond(phone) {
+      height: 10.5rem;
+      width: 10.5rem;
+    }
+  }
+}
+
+// PORTFOLIO ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.section-portfolio {
+  position: relative;
+  padding-top: 15rem;
+  padding-bottom: 5rem;
+  overflow: hidden;
+  transition: transform 1s, opacity 1s;
+
+  .portfolio-heading {
+    max-width: $grid-width;
+    margin: 0 auto;
+    @include respond(tab-land) {
+      max-width: 85rem;
+    }
+    @include respond(phone) {
+      max-width: 42rem;
+    }
+  }
+
+  .slider {
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    // margin: 0 4rem;
+    position: relative;
+    width: 46%;
+    height: 80rem;
+    margin: 0 2.7%;
+
+    @include respond(tab-land) {
+      width: 92%;
+      margin: 0 4%;
+    }
+    @include respond(phone) {
+      height: 75rem;
+      width: 90%;
+      margin: 0 5%;
+    }
+  }
+
+  .portfolio {
+    position: absolute;
+    top: 0;
+    height: inherit;
+    width: 100%;
+  }
+}
+
+.section--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
+// CONTACT /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+.section-contact {
+  padding: 15rem 0;
+  .row {
+    max-width: 104rem;
+    margin: 0 auto;
+
+    @include respond(tab-land) {
+      max-width: 90rem;
+    }
+    @include respond(tab-port) {
+      max-width: 73rem;
+    }
+    @include respond(phone) {
+      max-width: 88%;
+    }
+  }
+
+  .contact {
+    position: relative;
+    background-image: url(../img/contact.jpg);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+    border-radius: 2px;
+    width: 100%;
+    height: 85rem;
+    overflow: hidden;
+
+    @include respond(tab-port) {
+      // height: 95rem;
+    }
+
+    &__form {
+      padding: 4rem;
+      width: 55%;
+
+      @include respond(tab-port) {
+        padding: 3rem;
+        width: 60%;
+      }
+      @include respond(phone) {
+        padding: 2rem;
+        width: 72%;
+      }
+    }
+  }
+
+  .contact::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    background-color: rgba($color-black, 0.25);
+    z-index: 2;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(
+      100deg,
+      rgba($color-white, 0.9) 0%,
+      rgba($color-white, 0.9) 55%,
+      transparent 55%
+    );
+    height: inherit;
+    width: inherit;
+    z-index: 3;
+
+    @include respond(tab-port) {
+      background-image: linear-gradient(
+        100deg,
+        rgba($color-white, 0.9) 0%,
+        rgba($color-white, 0.9) 60%,
+        transparent 60%
+      );
+    }
+    @include respond(phone) {
+      background-image: linear-gradient(
+        100deg,
+        rgba($color-white, 0.9) 0%,
+        rgba($color-white, 0.9) 72%,
+        transparent 72%
+      );
+    }
+  }
+}
+
+// Copyright /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.copyright {
+  position: fixed;
+  left: 5rem;
+  bottom: 10rem;
+  z-index: 100;
+  @include respond(phone) {
+    left: 4.5rem;
+  }
+  &__text {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: $color-grey-dark-3;
+    letter-spacing: 1px;
+    transform: rotate(-90deg);
+    transform-origin: bottom left;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 3.5rem;
+    left: -1.1rem;
+    height: 2.8rem;
+    width: 1px;
+    background-color: $color-grey-dark-3;
+  }
+}

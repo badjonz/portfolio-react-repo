@@ -1,0 +1,450 @@
+.portfolio {
+  transition: all 0.8s;
+  &__content {
+    position: relative;
+    background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.9),
+      rgba($color-primary-dark, 0.9)
+    );
+    height: 60rem;
+    flex: 0 0 50%;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.1);
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background-image: linear-gradient(
+          to right bottom,
+          rgba($color-primary-light, 0.75),
+          rgba($color-primary-dark, 0.75)
+        ),
+        url(../img/wixtemplate.png);
+      background-size: cover;
+      background-position: center;
+      top: -30rem;
+      left: 15%;
+      transform: rotate(-45deg);
+      width: 40rem;
+      height: 110rem;
+      // z-index: -10;
+    }
+
+    // &__watermark {
+    //   position: absolute;
+    //   top: -20rem;
+    //   left: 30%;
+    //   width: 40%;
+    //   display: block;
+    //   transform: rotate(-45deg);
+    //   z-index: -10;
+    // }
+  }
+
+  &__link {
+    position: absolute;
+    top: 12.5%;
+    width: 75%;
+    height: auto;
+    background-size: contain;
+    background-position: bottom;
+    box-shadow: 0 4px 8px rgba($color-black, 0.2);
+    box-shadow: 0 8px 16px rgba($color-black, 0.1);
+    box-shadow: 0 16px 28px rgba($color-black, 0.05);
+    z-index: 10;
+    border-radius: 2px;
+    cursor: pointer;
+    border: none;
+  }
+
+  &__pic {
+    width: 100%;
+  }
+
+  &__info {
+    margin-top: 3rem;
+  }
+
+  &__heading {
+    font-size: 3.4rem;
+    margin-bottom: 1rem;
+  }
+  &__category {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: $color-text-primary-light;
+  }
+}
+
+// Navigation buttons for the portfolio
+
+.portfolio-nav-button {
+  display: inline-block;
+  position: absolute;
+  border: 1px solid rgba($color-secondary, 0.35);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.6s;
+  height: 8.5rem;
+  width: 8.5rem;
+  z-index: 900;
+  @include respond(tab-land) {
+    height: 7rem;
+    width: 7rem;
+  }
+  @include respond(phone) {
+    height: 5rem;
+    width: 5rem;
+  }
+  &--prev {
+    top: 15%;
+    right: 30%;
+    @include respond(tab-land) {
+      top: 13%;
+      right: 25%;
+    }
+    @include respond(phone) {
+      top: 19%;
+      right: 25%;
+    }
+  }
+
+  &--next {
+    top: 15%;
+    right: 23%;
+    @include respond(tab-land) {
+      top: 13%;
+      right: 18%;
+    }
+    @include respond(tab-port) {
+      top: 13%;
+      right: 17%;
+    }
+    @include respond(phone) {
+      top: 19%;
+      right: 15%;
+    }
+  }
+
+  &:hover {
+    background-color: $color-secondary;
+    span {
+      color: $color-grey-light-1;
+    }
+  }
+
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1.5rem;
+    transform: translate(-50%, -50%);
+    color: rgba($color-secondary, 0.35);
+  }
+}
+
+// Portfolio information view when you click on a portfolio //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.portfolio-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba($color-black, 0.8);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+  &:target .portfolio-information {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.portfolio-information {
+  position: relative;
+  @include absCenter;
+  background-color: $color-white;
+  width: 80%;
+  height: 75%;
+  border-radius: 3px;
+  z-index: 9500;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 45% 55%;
+  grid-template-rows: 2;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.25);
+  transition: all 0.5s 0.2s;
+
+  @include respond(tab-land) {
+    width: 85%;
+    height: 85%;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+  @include respond(phone) {
+    width: 90%;
+    height: 90%;
+  }
+
+  &__content {
+    position: relative;
+    padding: 2rem;
+    z-index: 10;
+    order: 2;
+    @include respond(tab-land) {
+      order: 1;
+    }
+  }
+
+  &__info {
+    padding: 1rem;
+    font-size: 1.6rem;
+    max-width: 90%;
+    margin: 0 auto;
+    @include respond(tab-land) {
+      max-width: 75%;
+      font-size: 1.7rem;
+      text-align: justify;
+    }
+    @include respond(phone) {
+      max-width: 90%;
+      font-size: 1.6rem;
+    }
+  }
+
+  &__video {
+    position: relative;
+    z-index: 10;
+    order: 1;
+    text-align: center;
+    grid-row: 1 / span 2;
+    @include respond(tab-land) {
+      grid-row: 2;
+      order: 2;
+    }
+  }
+
+  &__video-content {
+    height: auto;
+    width: 90%;
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    transform: translateY(-25%);
+    object-fit: fill;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: 0 1.3rem 2.5rem rgba($color-black, 0.2);
+    @include respond(tab-land) {
+      height: 90%;
+      width: auto;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @include respond(phone) {
+      max-width: 90%;
+      height: auto;
+    }
+    // margin: 3rem 0;
+  }
+
+  &__lang {
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+    max-width: 95%;
+    @include respond(tab-land) {
+      font-size: 2.4rem;
+    }
+    @include respond(phone) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__footer {
+    z-index: 10;
+    order: 3;
+    width: 75%;
+
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+  }
+
+  // &__video {
+  //   flex: 0 0 50%;
+  //   // background-image: linear-gradient(
+  //   //   $color-primary-light,
+  //   //   $color-primary-dark
+  //   // );
+  //   position: relative;
+  //   overflow: hidden;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   z-index: 10;
+  // }
+
+  // &__content {
+  //   position: relative;
+  //   flex: 1;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: flex-start;
+  //   align-items: center;
+  //   padding: 3rem;
+  //   z-index: 10;
+  // }
+
+  &__heading {
+    text-align: center;
+    padding: 2rem;
+    @include respond(phone) {
+      max-width: 95%;
+    }
+  }
+
+  .heading-tertiary {
+    @include respond(tab-land) {
+      font-size: 3.4rem;
+    }
+
+    @include respond(phone) {
+      font-size: 3rem;
+      line-height: 3.2rem;
+    }
+  }
+
+  &__btn {
+    width: 50%;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-top: 2rem;
+    @include respond(tab-land) {
+      width: 50%;
+    }
+  }
+
+  &__bg-pic {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 33.33333%;
+    transform: translateX(-50%);
+    background-size: cover;
+    z-index: -1;
+    @include respond(tab-land) {
+      width: 50%;
+    }
+    @include respond(phone) {
+      width: 75%;
+    }
+
+    &--1 {
+      background-image: linear-gradient(
+          rgba($color-white, 0.95) 0%,
+          rgba($color-white, 0.95) 100%
+        ),
+        url(../img/Kodomo-gakuen.png);
+    }
+
+    &--2 {
+      background-image: linear-gradient(
+          rgba($color-white, 0.9) 0%,
+          rgba($color-white, 0.9) 100%
+        ),
+        url(../img/jon-portfolio.png);
+    }
+    &--3 {
+      background-image: linear-gradient(
+          rgba($color-white, 0.9) 0%,
+          rgba($color-white, 0.9) 100%
+        ),
+        url(../img/bankist2.png);
+    }
+    &--4 {
+      background-image: linear-gradient(
+          rgba($color-white, 0.9) 0%,
+          rgba($color-white, 0.9) 100%
+        ),
+        url(../img/github-finder-app.png);
+    }
+    &--5 {
+      background-image: linear-gradient(
+          rgba($color-white, 0.9) 0%,
+          rgba($color-white, 0.9) 100%
+        ),
+        url(../img/forkify.png);
+    }
+  }
+
+  // &__bg-pic::before {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   background-color: rgba($color-white, 0.9);
+  //   height: 100%;
+  //   width: 100%;
+  // }
+
+  // .overlay {
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   height: inherit;
+  //   width: 100%;
+  // }
+
+  &__close {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    z-index: 20;
+    a:link,
+    a:visited {
+      display: inline-block;
+      cursor: pointer;
+      font-size: 2rem;
+      color: $color-grey-dark-2;
+      transition: all 0.3s;
+    }
+
+    a:hover {
+      color: $color-secondary;
+    }
+  }
+
+  &__wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    @include respond(tab-land) {
+    }
+  }
+
+  // OPEN STATES
+  // &:target {
+  // }
+}
