@@ -81,7 +81,12 @@ const PortfolioModal = ({ portfolio, onClose }) => {
           <div className='portfolio-information__heading'>
             <h3 className='heading-tertiary'>{portfolio.title}</h3>
           </div>
-          <p className='portfolio-information__info'>{portfolio.description}</p>
+
+          {portfolio.description.map((paragraph, index) => (
+            <p className='portfolio-information__info' key={index}>
+              {paragraph}
+            </p>
+          ))}
         </div>
 
         <div className='portfolio-information__footer'>
