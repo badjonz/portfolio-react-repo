@@ -6,12 +6,11 @@ const Contact = () => {
           <div className='overlay'>&nbsp;</div>
           <div className='contact__form'>
             <form
-              action=''
-              name='contact-form'
+              name='contact'
               className='form'
               method='POST'
               data-netlify='true'
-              data-netlify-recaptcha='true'
+              onSubmit='submit'
             >
               <div className='u-margin-bottom-medium'>
                 <h2 className='heading-secondary'>
