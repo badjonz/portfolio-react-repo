@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hidden Form</title>
+  </head>
+  <body>
+    <!-- This form matches your React form's fields -->
+    <form
+      name="portfolioContact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="portfolioContact" />
+
+      <label>
+        Name:
+        <input type="text" name="name" />
+      </label>
+
+      <label>
+        Email:
+        <input type="email" name="email" />
+      </label>
+      <label>
+        Subject:
+        <input type="text" name="subject" />
+      </label>
+
+      <label>
+        Message:
+        <textarea name="message"></textarea>
+      </label>
+
+      <!-- Honeypot field for spam protection -->
+      <div style="display: none">
+        <label>
+          Don't fill this out if you're human:
+          <input name="bot-field" />
+        </label>
+      </div>
+    </form>
+  </body>
+</html>
