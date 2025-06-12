@@ -687,14 +687,16 @@ a {
       .portfolio-information__bg-pic {
         width: 75%; } }
     .portfolio-information__bg-pic--1 {
-      background-image: linear-gradient(rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%), url(../public/img/Kodomo-gakuen.png); }
+      background-image: linear-gradient(rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%), url(../public/img/kirsha-health.png); }
     .portfolio-information__bg-pic--2 {
-      background-image: linear-gradient(rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../public/img/jon-portfolio.png); }
+      background-image: linear-gradient(rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../public/img/Kodomo-gakuen.png); }
     .portfolio-information__bg-pic--3 {
-      background-image: linear-gradient(rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../public/img/bankist2.png); }
+      background-image: linear-gradient(rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../public/img/jon-portfolio.png); }
     .portfolio-information__bg-pic--4 {
-      background-image: linear-gradient(rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../public/img/github-finder-app.png); }
+      background-image: linear-gradient(rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../public/img/bankist2.png); }
     .portfolio-information__bg-pic--5 {
+      background-image: linear-gradient(rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../public/img/github-finder-app.png); }
+    .portfolio-information__bg-pic--6 {
       background-image: linear-gradient(rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../public/img/forkify.png); }
   .portfolio-information__close {
     position: absolute;

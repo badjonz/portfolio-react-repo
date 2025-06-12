@@ -91,8 +91,11 @@ const PortfolioModal = ({ portfolio, onClose }) => {
 
         <div className='portfolio-information__footer'>
           <p className='portfolio-information__lang'>
-            {portfolio.technologies.join(' &middot; ')}
+            {portfolio.technologies.join(' · ')}
           </p>
+          {/* <p className='portfolio-information__lang'>
+            {portfolio.technologies.join(' &middot; ')}
+          </p> */}
           <a
             className='portfolio-information__btn btn'
             href={portfolio.link}

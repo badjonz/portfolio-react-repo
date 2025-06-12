@@ -373,7 +373,7 @@
           rgba($color-white, 0.95) 0%,
           rgba($color-white, 0.95) 100%
         ),
-        url(../public/img/Kodomo-gakuen.png);
+        url(../public/img/kirsha-health.png);
     }
 
     &--2 {
@@ -381,23 +381,30 @@
           rgba($color-white, 0.9) 0%,
           rgba($color-white, 0.9) 100%
         ),
-        url(../public/img/jon-portfolio.png);
+        url(../public/img/Kodomo-gakuen.png);
     }
     &--3 {
       background-image: linear-gradient(
           rgba($color-white, 0.9) 0%,
           rgba($color-white, 0.9) 100%
         ),
-        url(../public/img/bankist2.png);
+        url(../public/img/jon-portfolio.png);
     }
     &--4 {
       background-image: linear-gradient(
           rgba($color-white, 0.9) 0%,
           rgba($color-white, 0.9) 100%
         ),
-        url(../public/img/github-finder-app.png);
+        url(../public/img/bankist2.png);
     }
     &--5 {
+      background-image: linear-gradient(
+          rgba($color-white, 0.9) 0%,
+          rgba($color-white, 0.9) 100%
+        ),
+        url(../public/img/github-finder-app.png);
+    }
+    &--6 {
       background-image: linear-gradient(
           rgba($color-white, 0.9) 0%,
           rgba($color-white, 0.9) 100%

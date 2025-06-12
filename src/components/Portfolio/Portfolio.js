@@ -20,11 +20,11 @@ const Portfolio = () => {
       category: 'Healthcare Analytics / Consulting / Data Management',
       image: './img/kirsha-health.png',
       blhash: 'LFL;,4v#~EX-00WAnmf+01FyEcv}',
-      video: './img/kodomo-gakuen-vid.mp4',
+      video: './img/kirsha-demo.mp4',
       description: [
         'This was a freelance project that I undertook to develop a clean, mobile-responsive website for a healthcare solutions company specializing in Medicare Advantage and Prescription Drug risk adjustment.',
       ],
-      technologies: ['HTML%', 'CSS3', 'PHP', 'SASS', 'JavaScript', 'WordPress'],
+      technologies: ['HTML', 'CSS3', 'PHP', 'SASS', 'JavaScript', 'WordPress'],
       link: 'http://www.kirsha.health/',
     },
     {
@@ -52,7 +52,7 @@ const Portfolio = () => {
         'This is my personal portfolio website that showcases my projects, my learning through courses, and a little about me. ',
         'This website utilizes many of the skills I have gained throughout the years from school, personal self study and experience. ',
       ],
-      technologies: ['HTML5', 'CSS3', 'BEM', 'SASS', 'JavaScript'],
+      technologies: ['React', 'HTML5', 'CSS3', 'BEM', 'SASS', 'JavaScript'],
       link: 'https://jonkumar.netlify.app/',
     },
     {
