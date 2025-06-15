@@ -133,9 +133,9 @@
       &__pic {
         position: absolute;
         left: 60%;
-        top: 60%;
+        top: 50%;
         transform: translate(-50%, -50%);
-        height: 43rem;
+        height: 38rem;
         width: auto;
         z-index: 1000;
         transition: all 0.8s ease-out;
@@ -146,19 +146,28 @@
         animation-fill-mode: backwards;
         backface-visibility: hidden;
 
+        @include respond(tab-land) {
+          left: 70%;
+        }
+        @include respond(tab-port) {
+          left: 60%;
+        }
+
         @include respond(phone) {
+          left: 50%;
+          transform: translate(-50%, -55%);
           animation-delay: 0.7s;
         }
       }
 
       &__png {
         position: absolute;
-        left: 50%;
-        top: 50%;
-        opacity: 0.7;
-        height: 45rem;
+        left: 60%;
+        top: 60%;
+        opacity: 1;
+        height: 29rem;
         width: auto;
-        transform: translate(-50%, -48%);
+        transform: translate(-50%, -50%);
         z-index: 500;
         transition: all 0.8s ease-out;
         animation-name: moveInBottomBlob;
@@ -167,15 +176,24 @@
         animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
         animation-fill-mode: backwards;
         backface-visibility: hidden;
+
+        @include respond(tab-land) {
+          left: 70%;
+        }
+        @include respond(tab-port) {
+          left: 60%;
+        }
+
         @include respond(phone) {
+          left: 50%;
           animation-delay: 0s;
         }
       }
       &:hover .heading-photo__png {
-        transform: translate(-50%, -50%);
+        transform: translate(-52%, -52%);
       }
       &:hover .heading-photo__pic {
-        height: 44.5rem;
+        height: 39rem;
       }
     }
   }
