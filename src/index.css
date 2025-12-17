@@ -1585,9 +1585,68 @@ html::after {
   animation-fill-mode: both;
 }
 
+.skill {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .skill__box {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
+  max-width: 114rem;
+  justify-content: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+@media (max-width: 75em) {
+  .skill__box {
+    max-width: 85rem;
+  }
+}
+@media (max-width: 56.25em) {
+  .skill__box {
+    max-width: 70rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .skill__box {
+    max-width: 100%;
+  }
+}
+.skill__box.slide-left {
+  transform: translateX(-3rem);
+  opacity: 0;
+}
+.skill__box.slide-right {
+  transform: translateX(3rem);
+  opacity: 0;
+}
+.skill__box.slide-in-left {
+  animation: slideInFromLeft 0.3s ease forwards;
+}
+.skill__box.slide-in-right {
+  animation: slideInFromRight 0.3s ease forwards;
+}
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-3rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(3rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 .skill__item {
   position: relative;
@@ -1602,6 +1661,10 @@ html::after {
 .skill__icon {
   height: 13rem;
   width: 13rem;
+  transition: transform 0.3s ease;
+}
+.skill__icon:hover {
+  transform: scale(1.1);
 }
 @media (max-width: 75em) {
   .skill__icon {
@@ -1620,6 +1683,92 @@ html::after {
     height: 10.5rem;
     width: 10.5rem;
   }
+}
+.skill__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+.skill__nav:hover {
+  opacity: 0.7;
+}
+.skill__nav--prev {
+  left: calc(50% - 60rem);
+}
+@media (max-width: 75em) {
+  .skill__nav--prev {
+    left: calc(50% - 45rem);
+  }
+}
+@media (max-width: 56.25em) {
+  .skill__nav--prev {
+    left: calc(50% - 38rem);
+  }
+}
+@media (max-width: 37.5em) {
+  .skill__nav--prev {
+    left: 0.5rem;
+  }
+}
+.skill__nav--next {
+  right: calc(50% - 60rem);
+}
+@media (max-width: 75em) {
+  .skill__nav--next {
+    right: calc(50% - 45rem);
+  }
+}
+@media (max-width: 56.25em) {
+  .skill__nav--next {
+    right: calc(50% - 38rem);
+  }
+}
+@media (max-width: 37.5em) {
+  .skill__nav--next {
+    right: 0.5rem;
+  }
+}
+.skill__nav-icon {
+  width: 3rem;
+  height: 3rem;
+  fill: #0f1b61;
+}
+@media (max-width: 37.5em) {
+  .skill__nav-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+.skill__dots {
+  position: absolute;
+  bottom: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.8rem;
+}
+.skill__dot {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(15, 27, 97, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.skill__dot:hover {
+  background-color: rgba(15, 27, 97, 0.4);
+}
+.skill__dot--active {
+  background-color: #7f00e0;
+  transform: scale(1.2);
 }
 
 .section-portfolio {

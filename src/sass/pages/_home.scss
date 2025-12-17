@@ -308,9 +308,70 @@
 // SKILLs ///////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 .skill {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   &__box {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
+    max-width: 114rem;
+    justify-content: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+
+    @include respond(tab-land) {
+      max-width: 85rem;
+    }
+    @include respond(tab-port) {
+      max-width: 70rem;
+    }
+    @include respond(phone) {
+      max-width: 100%;
+    }
+
+    // Slide out animations
+    &.slide-left {
+      transform: translateX(-3rem);
+      opacity: 0;
+    }
+
+    &.slide-right {
+      transform: translateX(3rem);
+      opacity: 0;
+    }
+
+    // Slide in animations
+    &.slide-in-left {
+      animation: slideInFromLeft 0.3s ease forwards;
+    }
+
+    &.slide-in-right {
+      animation: slideInFromRight 0.3s ease forwards;
+    }
+  }
+
+  @keyframes slideInFromLeft {
+    from {
+      transform: translateX(-3rem);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInFromRight {
+    from {
+      transform: translateX(3rem);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
   }
 
   &__item {
@@ -327,6 +388,11 @@
   &__icon {
     height: 13rem;
     width: 13rem;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
 
     @include respond(tab-land) {
       height: 12rem;
@@ -339,6 +405,88 @@
     @include respond(phone) {
       height: 10.5rem;
       width: 10.5rem;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &--prev {
+      left: calc(50% - 60rem);
+      @include respond(tab-land) {
+        left: calc(50% - 45rem);
+      }
+      @include respond(tab-port) {
+        left: calc(50% - 38rem);
+      }
+      @include respond(phone) {
+        left: 0.5rem;
+      }
+    }
+
+    &--next {
+      right: calc(50% - 60rem);
+      @include respond(tab-land) {
+        right: calc(50% - 45rem);
+      }
+      @include respond(tab-port) {
+        right: calc(50% - 38rem);
+      }
+      @include respond(phone) {
+        right: 0.5rem;
+      }
+    }
+  }
+
+  &__nav-icon {
+    width: 3rem;
+    height: 3rem;
+    fill: $color-text-primary;
+
+    @include respond(phone) {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+
+  &__dots {
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.8rem;
+  }
+
+  &__dot {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba($color-text-primary, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      background-color: rgba($color-text-primary, 0.4);
+    }
+
+    &--active {
+      background-color: $color-secondary;
+      transform: scale(1.2);
     }
   }
 }
