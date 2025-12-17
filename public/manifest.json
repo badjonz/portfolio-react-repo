@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Jon Kumar",
+  "name": "Jon Kumar | Web Developer Portfolio",
+  "description": "Jon Kumar - Frontend Developer and UI/UX Designer based in Trinidad and Tobago",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +21,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#aadcec",
+  "background_color": "#f4f9fc"
 }

@@ -9,6 +9,10 @@
     @include inputtext;
     transition: all 0.3s;
 
+    @include respond(phone) {
+      width: 100%;
+    }
+
     &::-webkit-input-placeholder {
       color: $color-grey-dark-2;
     }
@@ -40,6 +44,10 @@
   &__textarea {
     @include inputtext;
     resize: none;
+
+    @include respond(phone) {
+      width: 100%;
+    }
 
     &:focus {
       @include inputtextfocus;

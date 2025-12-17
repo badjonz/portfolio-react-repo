@@ -27,16 +27,17 @@ const About = () => {
             }`}
           >
             <p>
-              Welcome to my portfolio, I am an aspiring Front-end Developer.
-              Here, I am showcasing the skills I have gained from continuously
-              gaining knowledge through courses and developing my own projects.
+              Welcome to my portfolio! I am a Frontend Developer and UI/UX Designer
+              based in Trinidad and Tobago. Here, I showcase the skills I have built
+              through continuous learning, professional courses, and hands-on projects.
             </p>
             <br />
             <p>
-              I have been living in Japan for over 4 years and my passion is web
-              development. I enjoy the process of building stylish, clean, and
-              responsive web applications. It is my dream to build a career as a
-              Software Engineer specializing in Front-end web development.
+              After spending over 4 years in Japan, I have returned to Trinidad and
+              Tobago where I continue to pursue my passion for web development. I
+              specialize in building stylish, clean, and responsive web applications
+              using modern technologies like React. My goal is to create impactful
+              digital experiences as a Software Engineer.
             </p>
             <br />
             <p>
