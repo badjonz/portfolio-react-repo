@@ -33,7 +33,7 @@ const About = () => {
             </p>
             <br />
             <p>
-              After spending over 4 years in Japan, I have returned to Trinidad and
+              After spending over 7 years in Japan, I have returned to Trinidad and
               Tobago where I continue to pursue my passion for web development. I
               specialize in building stylish, clean, and responsive web applications
               using modern technologies like React. My goal is to create impactful
