@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const skills = [
   // Primary skills (Page 1)
@@ -24,6 +24,26 @@ const Skills = () => {
   const [slideDirection, setSlideDirection] = useState('');
   const [isAnimating, setIsAnimating] = useState(false);
   const totalPages = Math.ceil(skills.length / SKILLS_PER_PAGE);
+
+  // Auto-toggle every 10 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isAnimating) {
+        setSlideDirection('slide-left');
+        setIsAnimating(true);
+        setTimeout(() => {
+          setCurrentPage((prev) => (prev === totalPages - 1 ? 0 : prev + 1));
+          setSlideDirection('slide-in-right');
+          setTimeout(() => {
+            setIsAnimating(false);
+            setSlideDirection('');
+          }, 300);
+        }, 300);
+      }
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, [isAnimating, totalPages]);
 
   const handlePrev = () => {
     if (isAnimating) return;
