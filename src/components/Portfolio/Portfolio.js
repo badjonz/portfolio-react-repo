@@ -92,7 +92,7 @@ const Portfolio = () => {
       video: './img/forkify-vid.mp4',
       description: [
         'Coursework; This was a food recipe web application called Forify where you can search for many different types recipes, change the serving sizes, add recipes and bookmark them. ',
-        "This was the final project of the JavaScript course where we utilize techniques I learn't throughout the course such as classes, modules, promises, fetch and async/await. The software architecture used to build this project was the MVC (Model-View-Controller) architecture. ",
+        "This was the final project of the JavaScript course where I utilized techniques I learn't throughout the course such as classes, modules, promises, fetch and async/await. The software architecture used to build this project was the MVC (Model-View-Controller) architecture. ",
       ],
       technologies: ['JavaScript', 'API', 'MVC Architecture'],
       link: 'https://forkify-v2.netlify.app/',
