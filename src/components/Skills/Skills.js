@@ -40,7 +40,7 @@ const Skills = () => {
           }, 300);
         }, 300);
       }
-    }, 10000);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, [isAnimating, totalPages]);
@@ -108,11 +108,7 @@ const Skills = () => {
       <div className={`skill__box ${slideDirection}`}>
         {visibleSkills.map((skill) => (
           <div className='skill__item' key={skill.name}>
-            <img
-              src={skill.icon}
-              alt={skill.name}
-              className='skill__icon'
-            />
+            <img src={skill.icon} alt={skill.name} className='skill__icon' />
           </div>
         ))}
       </div>
@@ -131,7 +127,9 @@ const Skills = () => {
         {Array.from({ length: totalPages }).map((_, index) => (
           <button
             key={index}
-            className={`skill__dot ${index === currentPage ? 'skill__dot--active' : ''}`}
+            className={`skill__dot ${
+              index === currentPage ? 'skill__dot--active' : ''
+            }`}
             onClick={() => handleDotClick(index)}
             aria-label={`Go to page ${index + 1}`}
           />
