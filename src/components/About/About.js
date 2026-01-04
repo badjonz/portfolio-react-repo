@@ -27,17 +27,19 @@ const About = () => {
             }`}
           >
             <p>
-              Welcome to my portfolio! I am a Frontend Developer and UI/UX Designer
-              based in Trinidad and Tobago. Here, I showcase the skills I have built
-              through continuous learning, professional courses, and hands-on projects.
+              Welcome to my portfolio! I am a Web Developer and UI/UX Designer
+              based in Trinidad and Tobago. Here, I showcase the skills I have
+              built through continuous learning, professional courses, and
+              hands-on projects.
             </p>
             <br />
             <p>
-              After spending over 7 years in Japan, I have returned to Trinidad and
-              Tobago where I continue to pursue my passion for web development. I
-              specialize in building stylish, clean, and responsive web applications
-              using modern technologies like React. My goal is to create impactful
-              digital experiences as a Software Engineer.
+              After spending over 7 years in Japan, I have returned to Trinidad
+              and Tobago where I continue to pursue my passion for web
+              development. I specialize in building stylish, clean, and
+              responsive web applications using modern technologies like React.
+              My goal is to create impactful digital experiences as a Software
+              Engineer.
             </p>
             <br />
             <p>

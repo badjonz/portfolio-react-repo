@@ -38,7 +38,7 @@ const Portfolio = () => {
         'I have developed a Kindergarten/Preschool website that is currently live. The website has both Japanese and English language capabilities.',
         "I utilized skills I have learn't through courses as well as outside of those courses having to research how to implement the dual languages among other different features.",
       ],
-      technologies: ['HTML5', 'CSS3', 'BEM', 'SASS', 'JavaScript', 'WordPress'],
+      technologies: ['React', 'NextJS', 'Tailwind CSS'],
       link: 'http://www.kodomogakuen.com/',
     },
     {
@@ -77,8 +77,8 @@ const Portfolio = () => {
       blhash: 'L47K-$~qxtRP~W_3xuM{_4?bofM{',
       video: './img/github-finder-app-vid.mp4',
       description: [
-        'Coursework; In this project we used the Github REST API to search for users and get their profile data and display it. ',
-        'We learned about interacting with a third party API, diving deeper into the context API with the use of reducers. We also got a taste of the CSS framework Tailwind CSS, utilizing a Tailwind component called Daisy UI. ',
+        'Coursework; In this project I used the Github REST API to search for users and get their profile data and display it. ',
+        'I learned about interacting with a third party API, diving deeper into the context API with the use of reducers. I also got a taste of the CSS framework Tailwind CSS, utilizing a Tailwind component called Daisy UI. ',
       ],
       technologies: ['React', 'REST API', 'Tailwind CSS', 'Context API'],
       link: 'https://github-finder-jon-repo.vercel.app/',
@@ -92,7 +92,7 @@ const Portfolio = () => {
       video: './img/forkify-vid.mp4',
       description: [
         'Coursework; This was a food recipe web application called Forify where you can search for many different types recipes, change the serving sizes, add recipes and bookmark them. ',
-        "This was the final project of the JavaScript course where we utilize techniques we learn't throughout the course such as classes, modules, promises, fetch and async/await. The software architecture used to build this project was the MVC (Model-View-Controller) architecture. ",
+        "This was the final project of the JavaScript course where we utilize techniques I learn't throughout the course such as classes, modules, promises, fetch and async/await. The software architecture used to build this project was the MVC (Model-View-Controller) architecture. ",
       ],
       technologies: ['JavaScript', 'API', 'MVC Architecture'],
       link: 'https://forkify-v2.netlify.app/',

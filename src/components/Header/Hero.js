@@ -12,7 +12,8 @@ const Hero = () => {
             <span className='fullstop'>.</span>
           </span>
           <span className='heading-primary__sub'>
-            I'm a <b>frontend developer</b> based in Port of Spain, Trinidad and Tobago.
+            I'm a <b>web developer</b> based in Port of Spain, Trinidad and
+            Tobago.
           </span>
         </h1>
       </div>
